@@ -11,7 +11,7 @@ def convert():
 
 # window root
 root = ttk.Window(themename= 'darkly')
-root.title('Tutorial')
+root.title('Kilometers to Miles')
 root.geometry('800x600')
 frm = ttk.Frame(root, padding=10)
 
@@ -21,7 +21,7 @@ title_label.pack(pady =10)
 
 #input
 input_frame = ttk.Frame(master=root)
-entry_int = IntVar()
+entry_int = IntVar()        
 entry = ttk.Entry(master = input_frame, textvariable=entry_int)
 butt1 = ttk.Button(master = input_frame, text='Convert', command = convert)
 entry.pack(side = 'left', padx = 10)
