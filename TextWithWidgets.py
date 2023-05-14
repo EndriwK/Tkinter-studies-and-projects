@@ -13,6 +13,7 @@ title.pack()
 # widget 2 - text editor
 text_box = ttk.Text(master=main_window)
 text_box.pack()
+
 # widget 3 - input box
 input_box = ttk.Frame(master=main_window)
 input_text = tk.StringVar()
