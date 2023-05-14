@@ -1,7 +1,7 @@
 import tkinter as tk
 import ttkbootstrap as ttk
 
-# main widnow parameters
+# main window parameters
 main_window = ttk.Window(themename='cyborg')
 main_window.geometry('800x500')
 main_window.title('Text editor')
@@ -20,13 +20,15 @@ text_editor = ttk.Text(master=main_window, height=8)
 text_editor.pack()
 
 # file name entry
+title = ttk.Label(master = main_window, text='File name', font='helvetica 14 bold')
+title.pack(pady=5)
 entry_string = tk.StringVar()
 entry_name = ttk.Entry(master=main_window, textvariable=entry_string)
-entry_name.pack(side='left',padx=100, pady=5)
+entry_name.pack(pady=5)
 
 # save file button
 save_button = ttk.Button(master=main_window, text='save file', command=savefile)
-save_button.pack(side='right',padx=100, pady=5)
+save_button.pack(pady=5)
 
 # main loop
 main_window.mainloop()
