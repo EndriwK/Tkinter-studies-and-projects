@@ -16,8 +16,8 @@ def savefile():
         f.write(edited_txt)
 
 # text editor
-text_editor = ttk.Text(master=main_window, height=8)
-text_editor.pack()
+text_editor = ttk.Text(master=main_window, height=12)
+text_editor.pack(pady=10)
 
 # file name entry
 title = ttk.Label(master = main_window, text='File name', font='helvetica 14 bold')
