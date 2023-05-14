@@ -9,7 +9,7 @@ main_window.title('Label update')
 # update function
 def update_function():
     print(entry.get())
-    label.config(text=entry.get())
+    label['text'] = entry.get()
 
 # label
 label= ttk.Label(master=main_window, text='Update it!')
