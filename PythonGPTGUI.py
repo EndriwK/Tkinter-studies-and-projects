@@ -16,6 +16,13 @@ def gpt_func(input):
     global gpt_final
     gpt_final = output.choices[0].message.content + '\n'
     print(gpt_final)
+    gpt_string_var = ttk.StringVar(value=gpt_final)
+    complete_gpt = ttk.Label(master=main_window,
+                             text=f'Question: {input}\n' + gpt_string_var.get(),
+                            font='helvetica 10 bold',
+                            wraplength=800)
+    complete_gpt.pack()
+
 
 
 # main window
@@ -39,13 +46,6 @@ def button_func():
 
 button = ttk.Button(master=main_window, text='Complete', command= button_func)
 button.pack(pady=5)
-
-# label 
-complete_gpt = ttk.Label(master=main_window,
-                            text=gpt_final,
-                            font='helvetica 10 bold',
-                            wraplength=800)
-complete_gpt.pack()
 
 # main loop
 main_window.mainloop()
