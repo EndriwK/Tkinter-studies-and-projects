@@ -46,5 +46,4 @@ radio_button2 = ttk.Radiobutton(
 radio_button1.pack(pady=5)
 radio_button2.pack(pady=5)
 
-
 main_window.mainloop()
