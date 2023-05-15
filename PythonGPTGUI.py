@@ -13,19 +13,15 @@ def gpt_func(input):
                     'content': input
         }]
     )
+    global gpt_final
     gpt_final = output.choices[0].message.content + '\n'
     print(gpt_final)
-    complete_gpt = ttk.Label(master=main_window,
-                             text=gpt_final,
-                             font='helvetica 10 bold',
-                             wraplength=800
-    complete_gpt.pack()
+
 
 # main window
 main_window = ttk.Window(themename = 'darkly')
 main_window.geometry('800x600')
 main_window.title('Chat GPT 3.5')
-
 
 # title label
 title = ttk.Label(master=main_window, text='GPT 3.5', font='Helvetica 24 bold')
@@ -44,6 +40,12 @@ def button_func():
 button = ttk.Button(master=main_window, text='Complete', command= button_func)
 button.pack(pady=5)
 
+# label 
+complete_gpt = ttk.Label(master=main_window,
+                            text=gpt_final,
+                            font='helvetica 10 bold',
+                            wraplength=800)
+complete_gpt.pack()
 
 # main loop
 main_window.mainloop()
