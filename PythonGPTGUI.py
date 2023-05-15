@@ -1,11 +1,15 @@
+# this code makes use of tkinter and openai's python API to create a graphic interface
+# for Chat GPT 3.5.
+
+# imports
 import tkinter as tk
 import ttkbootstrap as ttk
 import openai
 from AiKey import aikey
 
-
 # open ai parameters:
 openai.api_key = aikey
+# chat gpt input/output function
 def gpt_func(input):
     output = openai.ChatCompletion.create(
         model = 'gpt-3.5-turbo',
@@ -13,7 +17,6 @@ def gpt_func(input):
                     'content': input
         }]
     )
-    global gpt_final
     gpt_final = output.choices[0].message.content + '\n'
     print(gpt_final)
     gpt_string_var = ttk.StringVar(value=gpt_final)
