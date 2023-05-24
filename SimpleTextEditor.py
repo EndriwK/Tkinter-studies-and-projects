@@ -14,6 +14,8 @@ def savefile():
     print(f'file name: {file_name}')
     with open(f'{file_name}.txt', 'w') as f:
         f.write(edited_txt)
+    main_window.destroy()
+    
 
 # text editor
 text_editor = ttk.Text(master=main_window, height=12)
