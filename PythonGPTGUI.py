@@ -20,7 +20,8 @@ def gpt_func(input):
     gpt_final = output.choices[0].message.content + '\n'
     print(gpt_final)
     gpt_string_var = ttk.StringVar(value=gpt_final)
-    complete_gpt = ttk.Text(master=main_window, variable= gpt_string_var)
+
+    complete_gpt.insert('1.0', gpt_final)
     complete_gpt.pack()
 
 
@@ -35,8 +36,11 @@ title = ttk.Label(master=main_window, text='GPT 3.5', font='Helvetica 24 bold')
 title.pack(pady=5)
 
 # text entry
-gpt_entry = ttk.Text(master=main_window, width=400, height=5)
+gpt_entry = ttk.Text(master=main_window, width=400, height=5, wrap='word')
 gpt_entry.pack(pady=5, padx=5)
+
+# gpt text
+complete_gpt = ttk.Text(master=main_window, wrap='char')
 
 # button
 def button_func():
