@@ -20,10 +20,7 @@ def gpt_func(input):
     gpt_final = output.choices[0].message.content + '\n'
     print(gpt_final)
     gpt_string_var = ttk.StringVar(value=gpt_final)
-    complete_gpt = ttk.Label(master=main_window,
-                             text=f'Question: {input}\n' + gpt_string_var.get(),
-                            font='helvetica 10 bold',
-                            wraplength=800)
+    complete_gpt = ttk.Text(master=main_window, variable= gpt_string_var)
     complete_gpt.pack()
 
 
