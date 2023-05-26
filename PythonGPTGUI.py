@@ -20,7 +20,7 @@ def gpt_func(input):
     gpt_final = output.choices[0].message.content + '\n'
     print(gpt_final)
     gpt_string_var = ttk.StringVar(value=gpt_final)
-
+    complete_gpt.delete('1.0', 'end')
     complete_gpt.insert('1.0', gpt_final)
     complete_gpt.pack()
 
