@@ -1,6 +1,7 @@
 import tkinter as tk
 import ttkbootstrap as ttk
 from pytube import YouTube
+import os
 
 
 # main window
@@ -18,9 +19,9 @@ link_entry.pack(pady=10)
 def mp3_download():
     link = link_entry.get()
     yt = YouTube(link)
-    stream = yt.streams.get_audio_only(subtype='mp3')
+    stream = yt.streams.filter(only_audio=True).first()
+    video = 
     stream.download()
-    file = stream.get_file_path()
     print('Downloaded MP3')
     
 # button
