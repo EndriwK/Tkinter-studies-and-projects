@@ -1,7 +1,6 @@
 import tkinter as tk
 import ttkbootstrap as ttk
-import pafy
-import youtube_dl
+from pytube import YouTube
 
 
 # main window
@@ -16,17 +15,18 @@ link_entry = ttk.Entry(master=main_window)
 link_entry.pack(pady=10)
 
 # downloading
-def download():
-    video = pafy.new(link)
-    best = video.getbest(preftype='mp3')
-    print(best.resolution, best.extension)
-    best.download
+def mp3_download():
+    link = link_entry.get()
+    yt = YouTube(link)
+    stream = yt.streams.get_audio_only(subtype='mp3')
+    stream.download()
+    print('Downloaded MP3')
     
-link = link_entry.get()
+
 
 
 # button
-button =ttk.Button(text='Download', command=download)
+button =ttk.Button(text='Download', command=mp3_download)
 button.pack(pady=10)
 
 
