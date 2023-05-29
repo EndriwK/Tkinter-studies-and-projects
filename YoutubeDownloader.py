@@ -20,11 +20,9 @@ def mp3_download():
     yt = YouTube(link)
     stream = yt.streams.get_audio_only(subtype='mp3')
     stream.download()
+    file = stream.get_file_path()
     print('Downloaded MP3')
     
-
-
-
 # button
 button =ttk.Button(text='Download', command=mp3_download)
 button.pack(pady=10)
