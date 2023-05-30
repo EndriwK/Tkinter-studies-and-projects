@@ -47,5 +47,3 @@ button_folder = ttk.Button(text='open download folder', command=lambda:os.startf
 button_folder.pack(pady=10)
 
 main_window.mainloop()
-
-os.ge
