@@ -67,5 +67,8 @@ lambda: button.invoke() calls the button's function
 .bind(<Motion>) gets mouse updates
 
 .bind(<FocusIn>) gets value if selected field
+
 .bind(<FocusOut>) gets value if deselected field
+
+.bind(<MouseWheel>) gets mouse wheel updates
 '''
