@@ -3,7 +3,6 @@ import ttkbootstrap as ttk
 from pytube import YouTube
 import os
 
-
 # main window
 main_window = ttk.Window(title='Youtube Downloader', themename='vapor')
 main_window.geometry('600x600')
@@ -55,7 +54,6 @@ main_window.mainloop()
 
 
 
-
 '''
 next part:
 event binding
@@ -68,5 +66,6 @@ lambda: button.invoke() calls the button's function
 
 .bind(<Motion>) gets mouse updates
 
-.bind(<FocusIn>) gets focus
+.bind(<FocusIn>) gets value if selected field
+.bind(<FocusOut>) gets value if deselected field
 '''
