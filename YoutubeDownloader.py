@@ -39,7 +39,7 @@ def mp3_download():
     text.pack()                                                 # pack the label
     
 
-# enter keybind
+# events
 main_window.bind('<KeyPress-Return>', lambda event: button.invoke())    # binds enter key to the button and its function
 
 
@@ -64,5 +64,5 @@ Widget.bind(event, function)
 
 format: modifier-type-detail
 
-lambda: 
+lambda: button.invoke() calls the button's function
 '''
