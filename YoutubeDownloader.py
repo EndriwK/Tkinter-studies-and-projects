@@ -65,4 +65,8 @@ Widget.bind(event, function)
 format: modifier-type-detail
 
 lambda: button.invoke() calls the button's function
+
+.bind(<Motion>) gets mouse updates
+
+.bind(<FocusIn>) gets focus
 '''
