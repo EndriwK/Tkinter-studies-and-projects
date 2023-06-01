@@ -26,24 +26,43 @@ destination_entry.pack(pady = 10)
 
 # downloading
 def mp3_download():
-    link = link_entry.get()
-    yt = YouTube(link)
-    video = yt.streams.filter(only_audio=True).first()
-    destination = r'C:\Users\endri\Music'
-    out_file = video.download(output_path=destination)
-    # save the file
-    base, ext = os.path.splitext(out_file)
-    new_file = base + '.mp3'
-    os.rename(out_file, new_file)
-    print('Downloaded MP3')
-    text = ttk.Label(master=main_window, text=f'{video.title} succsessfuly downloaded', font='helvetica 10')
-    text.pack()
+    link = link_entry.get()                                     # get the link from the entry
+    yt = YouTube(link)                                          # Get youtube method from pytube
+    video = yt.streams.filter(only_audio=True).first()          # filter for only audio
+    destination = r'C:\Users\endri\Music'                       # destination
+    out_file = video.download(output_path=destination)          # download the file
+    base, ext = os.path.splitext(out_file)                      # split the file name in 'part' and 'extension'
+    new_file = base + '.mp3'                                    # new file with mp3 extension
+    os.rename(out_file, new_file)                               # rename the file
+    print('Downloaded MP3')                                     # print the message
+    text = ttk.Label(master=main_window, text=f'{video.title} succsessfuly downloaded', font='helvetica 10')    # label for the message
+    text.pack()                                                 # pack the label
     
+
+# enter keybind
+main_window.bind('<KeyPress-Return>', lambda event: button.invoke())    # binds enter key to the button and its function
+
+
 # button
 button =ttk.Button(text='Download', command=mp3_download)
+
 button.pack(pady=10)
 
 button_folder = ttk.Button(text='open download folder', command=lambda:os.startfile(r'C:\Users\endri\Music'))
 button_folder.pack(pady=10)
 
 main_window.mainloop()
+
+
+
+
+'''
+next part:
+event binding
+
+Widget.bind(event, function)
+
+format: modifier-type-detail
+
+lambda: 
+'''
