@@ -10,18 +10,10 @@ main_window.geometry('600x600')
 # title 
 title = ttk.Label(text='Youtube Downloader', font= 'Helvetica 20')
 title.pack(pady=10)
+
 # entry
 link_entry = ttk.Entry(master=main_window)
 link_entry.pack(pady=10)
-
-strvar = tk.StringVar()
-label1 = ttk.Label(master=main_window, text= 'add path, leave blank for current directory.',
-                   font= 'helvetica 10')
-destination_entry = ttk.Entry(master=main_window, textvariable=strvar)
-
-label1.pack(pady=10)
-destination_entry.pack(pady = 10)
-
 
 # downloading
 def mp3_download():
@@ -33,7 +25,7 @@ def mp3_download():
     base, ext = os.path.splitext(out_file)                      # split the file name in 'part' and 'extension'
     new_file = base + '.mp3'                                    # new file with mp3 extension
     os.rename(out_file, new_file)                               # rename the file
-    print('Downloaded MP3')                                     # print the message
+    print('Downloaded mp3')                                     # print the message
     text = ttk.Label(master=main_window, text=f'{video.title} succsessfuly downloaded', font='helvetica 10')    # label for the message
     text.pack()                                                 # pack the label
     
@@ -53,7 +45,6 @@ button_folder.pack(pady=10)
 main_window.mainloop()
 
 
-
 '''
 next part:
 event binding
@@ -71,4 +62,8 @@ lambda: button.invoke() calls the button's function
 .bind(<FocusOut>) gets value if deselected field
 
 .bind(<MouseWheel>) gets mouse wheel updates
+
+IT IS NOT POSSIVLE TO DOWNLOAD YT VIDEOS AS WAV
+
+that's a shame
 '''
